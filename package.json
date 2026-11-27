@@ -1,0 +1,37 @@
+{
+  "name": "mcp-glpi",
+  "version": "0.1.1",
+  "description": "MCP server para chamados do GLPI (API REST v1)",
+  "type": "module",
+  "bin": {
+    "mcp-glpi": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    ".env.example"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:test": "tsc -p tsconfig.test.json",
+    "test": "npm run build && npm run build:test && node --test dist-test/test/*.test.js",
+    "selfcheck": "npm run build && npm run build:test && node dist-test/scripts/selfcheck.js",
+    "pack": "npm pack"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ooshimakenji/mcp-glpi.git"
+  }
+}
